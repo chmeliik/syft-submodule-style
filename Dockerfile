@@ -21,8 +21,5 @@ LABEL org.opencontainers.image.title="syft"
 LABEL org.opencontainers.image.description="CLI tool and library for generating a Software Bill of Materials from container images and filesystems"
 LABEL org.opencontainers.image.vendor="Anchore, Inc."
 LABEL org.opencontainers.image.licenses="Apache-2.0"
-LABEL io.artifacthub.package.readme-url="https://raw.githubusercontent.com/anchore/syft/main/README.md"
-LABEL io.artifacthub.package.logo-url="https://user-images.githubusercontent.com/5199289/136844524-1527b09f-c5cb-4aa9-be54-5aa92a6086c1.png"
-LABEL io.artifacthub.package.license="Apache-2.0"
 
 ENTRYPOINT ["/syft"]

@@ -19,7 +19,7 @@ COPY --from=build /src/syft/dist/syft /syft
 
 LABEL org.opencontainers.image.title="syft"
 LABEL org.opencontainers.image.description="CLI tool and library for generating a Software Bill of Materials from container images and filesystems"
-LABEL org.opencontainers.image.vendor="Anchore, Inc."
+LABEL org.opencontainers.image.vendor="Anchore, Inc.? Red Hat, Inc.? I don't know."
 LABEL org.opencontainers.image.licenses="Apache-2.0"
 
 ENTRYPOINT ["/syft"]

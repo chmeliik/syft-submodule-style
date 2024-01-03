@@ -1,0 +1,3 @@
+[submodule "syft"]
+	path = syft
+	url = https://github.com/anchore/syft.git

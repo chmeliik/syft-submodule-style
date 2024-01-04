@@ -1,0 +1,11 @@
+diff --git a/cmd/syft/internal/constants.go b/cmd/syft/internal/constants.go
+index eedbdb0e..2f47e1d0 100644
+--- a/cmd/syft/internal/constants.go
++++ b/cmd/syft/internal/constants.go
+@@ -1,5 +1,5 @@
+ package internal
+ 
+ const (
+-	NotProvided = "[not provided]"
++	NotProvided = "[n/a]"
+ )

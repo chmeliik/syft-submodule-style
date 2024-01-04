@@ -1,0 +1,13 @@
+diff --git a/cmd/syft/main.go b/cmd/syft/main.go
+index c0ab574b..eaf7025f 100644
+--- a/cmd/syft/main.go
++++ b/cmd/syft/main.go
+@@ -9,7 +9,7 @@ import (
+ )
+ 
+ // applicationName is the non-capitalized name of the application (do not change this)
+-const applicationName = "syft"
++const applicationName = "syft (redhat)"
+ 
+ // all variables here are provided as build-time arguments, with clear default values
+ var (

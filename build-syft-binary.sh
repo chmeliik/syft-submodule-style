@@ -3,6 +3,9 @@ set -o errexit -o nounset -o pipefail
 
 # Roughly replicate goreleaser templating: https://goreleaser.com/customization/templates/.
 # Needed for passing version information to the Syft build (see syft/.goreleaser.yaml).
+#
+# If any patches are present (i.e. there is a patches/ directory), apply them before
+# building the binary.
 
 original_path=$PWD
 
@@ -26,6 +29,15 @@ version=$(get_version)
 full_commit=$(git rev-parse HEAD)
 date="$(date --utc --iso-8601=seconds | cut -d '+' -f 1)Z"  # yyyy-mm-ddThh:mm:ssZ
 summary=$(git describe --dirty --always --tags)
+
+if [[ -d ../patches ]]; then
+    git apply ../patches/*
+    # on exit, undo all changes in the syft submodule
+    trap 'git reset --hard >/dev/null' EXIT
+    # TODO: how to indicate patches in the version?
+    #   Do we bump the major.minor.*patch* version?
+    #   Add some +build tag?
+fi
 
 # command based on syft/.goreleaser.yaml configuration
 CGO_ENABLED=0 go build -ldflags "

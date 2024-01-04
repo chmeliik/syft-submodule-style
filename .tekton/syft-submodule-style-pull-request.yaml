@@ -171,6 +171,8 @@ spec:
         value: $(params.revision)
       - name: enableSymlinkCheck
         value: 'false'
+      - name: fetchTags
+        value: 'true'
       runAfter:
       - init
       taskRef:
